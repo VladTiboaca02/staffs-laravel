@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\pizzaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/pizza', function () {
+    return view('dashboard');
+});
+
+Route::get('list', [pizzaController::class,'show']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
